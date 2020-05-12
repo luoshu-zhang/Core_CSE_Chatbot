@@ -12,6 +12,9 @@ def give_basic_info(info, info_body):
     return response
 
 
+# TODO： provide mission information
+
+
 # provide general coordinator info
 def provide_general_coordinator_info():
     program_info = helper.load_program_info()
