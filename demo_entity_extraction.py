@@ -314,7 +314,7 @@ def process_dialog(entities):
         print(response)
         return
 
-
+# connect it with ios
 if __name__ == "__main__":
     helper.load_program_info()
     helper.load_enrichment_general_info()
