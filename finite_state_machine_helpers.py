@@ -58,9 +58,17 @@ def divide_basic_questions(entities):
             enrichment = entities["enrich_target"][i]["value"]
             # TODO
             if enrichment == "Exchange Programs":
-                if contains("inbound", entities["enrich_target"]) and contains("outbound", entities["enrich_target"]):
-                    response += ""
-            response += enrich_general[enrichment][1]
+                if "exchange_type" in entities:
+                    if contains("inbound", entities["exchange_type"]) and contains("outbound", entities["exchange_type"]):
+                        response += response_generator.provide_inbound_exchange()
+                        response += "\n"
+                        response += response_generator.provide_outbound_exchange()
+                    elif contains("inbound", entities["exchange_type"]):
+                        response += response_generator.provide_inbound_exchange()
+                    elif contains("outbound", entities["exchange_type"]):
+                        response += response_generator.provide_outbound_exchange()
+            else:
+                response += enrich_general[enrichment][1]
         print(response)
         new_state = "end"
         return new_state, entities
