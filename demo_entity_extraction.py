@@ -316,11 +316,7 @@ def process_dialog(entities):
 
 
 if __name__ == "__main__":
-    helper.load_program_info()
-    helper.load_enrichment_general_info()
-    print("This line is for demo purpose. Please input a sentence.")
-    helper.load_research_area_info()
-    helper.load_faculty_research_info()
+    print(response_generator.greeting())
     while True:
         user_response = input("")
         entity_list = get_entities(user_response)["entities"]
