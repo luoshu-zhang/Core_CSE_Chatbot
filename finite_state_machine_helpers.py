@@ -6,6 +6,11 @@ from entity_extraction import get_entities
 from response_generator import provide_course_info
 
 
+def process_unhandled_cases(entities):
+    # 在这里处理low confidence的情况
+    pass
+
+
 def check_entities(entities):
     if not entities or "intent" not in entities:
         new_state = "error"
