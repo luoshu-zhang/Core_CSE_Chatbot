@@ -56,7 +56,6 @@ def divide_basic_questions(entities):
             if i != 0:
                 response += "\n\n"
             enrichment = entities["enrich_target"][i]["value"]
-            # TODO
             if enrichment == "Exchange Programs":
                 if "exchange_type" in entities:
                     if contains("inbound", entities["exchange_type"]) and contains("outbound", entities["exchange_type"]):

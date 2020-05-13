@@ -322,5 +322,3 @@ if __name__ == "__main__":
         entity_list = get_entities(user_response)["entities"]
         fsm = define_states()
         fsm.run(entity_list)
-        helper.load_faculty_information()
-        # process_dialog(entity_list)
