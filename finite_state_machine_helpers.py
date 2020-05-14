@@ -50,8 +50,25 @@ def classify_intent(entities):
     if contains("get_prerequisite", entities["intent"]):
         new_state = "prerequisite_query"
         return new_state, entities
+    if contains("get_number", entities["intent"]):
+        new_state = "number_query"
+        return new_state, entities
     new_state = "error"
     return new_state, entities
+
+
+def process_number(entities):
+    if "info_target" in entities:
+        if contains("rank", entities["info_target"]):
+            response = response_generator.provide_ranking_information()
+            print(response)
+            new_state = "end"
+            return new_state, entities
+    if "job_title" in entities:
+        response = response_generator.provide_faculty_number()
+        print(response)
+        new_state = "end"
+        return new_state, entities
 
 
 def divide_basic_questions(entities):

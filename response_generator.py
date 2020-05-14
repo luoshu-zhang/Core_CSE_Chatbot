@@ -402,6 +402,20 @@ def provide_ranking_information():
     return response
 
 
+# provide number of faculty
+def provide_faculty_number():
+    response = "We now have a total of 47 faculty members on board, representing a fair mix of senior faculty at the " \
+               "Professor and Associate Professor levels and junior faculty at the Assistant Professor level.\n\n"
+    response += "All of our faculty members have worldwide teaching and research experience in areas of Artificial" \
+                " Intelligence, Cybersecurity, Data, Knowledge and Information Management, Human Computer " \
+                "Interaction, " \
+                "Networking and Computer Systems, Software Engineering and Programming Languages, Theoretical " \
+                "Computer " \
+                "Science, and Vision and Graphics. Our faculty members earned their PhD from renowned universities " \
+                "all over the world, and are highly regarded by peers in their field."
+    return response
+
+
 # provide answers when the chat-bot is not able to answer the question
 def sorry():
     response = "Sorry I can't help you. Please try a different one."

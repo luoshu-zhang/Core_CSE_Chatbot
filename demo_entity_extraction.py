@@ -30,6 +30,7 @@ def define_states():
     fsm_entities.add_state("access_query", None, end_state=1)
     fsm_entities.add_state("general_query", finite_state_machine_helpers.process_general)
     fsm_entities.add_state("prerequisite_query", finite_state_machine_helpers.get_prerequisite)
+    fsm_entities.add_state("number_query", finite_state_machine_helpers.process_number)
 
     # some implementation about query
     fsm_entities.add_state("query_coordinator", process_coordinator)
