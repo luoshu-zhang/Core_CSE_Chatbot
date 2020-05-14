@@ -605,10 +605,6 @@ def process_info_query(entities):
             print(response)
             new_state = "end"
             return new_state, entities
-
-    # TODO
-    if "job_title" in entities:
-        pass
     new_state = "error"
     return new_state, entities
 
