@@ -316,8 +316,18 @@ def query_job_student():
 # ask questions about jobs
 def query_job():
     response = provide_faculty_recruitment()
-    response += "<>Faculty position\n"
-    response += "<>Ordinary staff\n"
+    response += provide_staff()
+    return response
+
+
+# ask questions about staff recruitment
+def provide_staff():
+    response = "In support of a green work environment, we accept applications submitted online only. To apply, " \
+               "please " \
+               "complete an online application form through the HKUST Careers website and return it online to " \
+               "the Human Resources Office on or before Friday, 8 November 2020. Applicants will receive an " \
+               "acknowledgement by email upon successful submission. We thank applicants for their interest, but " \
+               "advise that only shortlisted candidates will be notified of the result of the application."
     return response
 
 

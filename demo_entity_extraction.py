@@ -36,7 +36,6 @@ def define_states():
 
     # some other states about admission
     fsm_entities.add_state("admission_general", finite_state_machine_helpers.process_admission_general)
-    fsm_entities.add_state("admission_job", None, end_state=1)
 
     fsm_entities.add_state("error", None, end_state=1)
     fsm_entities.set_start("start")
