@@ -149,7 +149,30 @@ def divide_basic_questions(entities):
     return new_state, entities
 
 
-# TODO: implement the FSM of admission information
+# Get the prerequisite
+def get_prerequisite(entities):
+    if "course" in entities or "honor_course" in entities:
+        response = ""
+        if "course" not in entities:
+            total_course = entities["honor_course"]
+        elif "honor_course" not in entities:
+            total_course = entities["course"]
+        else:
+            total_course = entities["course"] + entities["honor_course"]
+        attributes, course_info = helper.load_course_information()
+        for i in range(len(total_course)):
+            if i != 0:
+                response += "\n"
+            course_code = total_course[i]["value"]
+            prerequisite = course_info[course_code][4]
+            response += response_generator.provide_course_prerequisite(course_code, prerequisite)
+        print(response)
+        new_state = "end"
+        return new_state, entities
+    new_state = "error"
+    return new_state, entities
+
+
 def divide_admission_questions(entities):
     if "enrich_target" in entities:
         if contains("Exchange Programs", entities["enrich_target"]):

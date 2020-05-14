@@ -29,6 +29,7 @@ def define_states():
     fsm_entities.add_state("quality_query", finite_state_machine_helpers.ensure_quality_generation)
     fsm_entities.add_state("access_query", None, end_state=1)
     fsm_entities.add_state("general_query", finite_state_machine_helpers.process_general)
+    fsm_entities.add_state("prerequisite_query", )
 
     # some implementation about query
     fsm_entities.add_state("query_coordinator", process_coordinator)
