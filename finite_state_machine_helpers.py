@@ -151,7 +151,6 @@ def divide_basic_questions(entities):
 
 # TODO: implement the FSM of admission information
 def divide_admission_questions(entities):
-    # TODO
     if "enrich_target" in entities:
         if contains("Exchange Programs", entities["enrich_target"]):
             if "exchange_type" in entities:
@@ -258,6 +257,20 @@ def process_admission_general(entities):
         # TODO: set up a navigation here
         else:
             print(response_generator.query_student())
+            program_choice = input("")
+            entities_list_original = get_entities(program_choice)
+            entity_list_new = helper.change_entity_list(entities_list_original)
+            if "program" in entity_list_new:
+                response = ""
+                for i in range(len(entity_list_new["program"])):
+                    if i != 0:
+                        response += "\n"
+                    program = entity_list_new["program"][i]["value"]
+                    admission = helper.load_program_info()[program][2]
+                    response += admission
+                print(response)
+                new_state = "end"
+                return new_state, entities
         return "end", entities
     print(response_generator.sorry())
     return "end", entities
