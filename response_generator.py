@@ -315,7 +315,7 @@ def query_job_student():
 
 # ask questions about jobs
 def query_job():
-    response = "Do you want to apply for a faculty position or an ordinary staff?"
+    response = provide_faculty_recruitment()
     response += "<>Faculty position\n"
     response += "<>Ordinary staff\n"
     return response
@@ -334,7 +334,7 @@ def query_student():
     response += "<>Minor Program in Information Technology\n"
     response += "<>Minor Program in Big Data Technology\n"
     response += "<>Master of Philosophy in Computer Science and Engineering\n"
-    response += "<>Doctor of Philosophy in Computer Science and Engineering\n"
+    response += "<>Doctor of Philosophy in Computer Science and Engineering"
     return response
 
 

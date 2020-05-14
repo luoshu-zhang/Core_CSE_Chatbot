@@ -180,11 +180,14 @@ def check_job(info_target):
 
 
 def change_entity_list(entity_list):
-    intent = entity_list["intents"]
-    new_intent = []
-    for i in range(len(intent)):
-        new_intent.append({})
-        new_intent[i]["value"] = intent[i]["name"]
+    if "intents" in entity_list:
+        intent = entity_list["intents"]
+        new_intent = []
+        for i in range(len(intent)):
+            new_intent.append({})
+            new_intent[i]["value"] = intent[i]["name"]
+    else:
+        new_intent = None
     new_entities = {"intent": new_intent}
     for key, value in entity_list["entities"].items():
         new_entities[value[0]["name"]] = []

@@ -254,7 +254,6 @@ def process_admission_general(entities):
             print(response_generator.query_job())
             new_state = "end"
             return new_state, entities
-        # TODO: set up a navigation here
         else:
             print(response_generator.query_student())
             program_choice = input("")
