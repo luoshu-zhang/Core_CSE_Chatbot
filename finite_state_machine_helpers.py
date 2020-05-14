@@ -616,6 +616,20 @@ def process_general(entities):
     return new_state, entities
 
 
+def ensure_quality_generation(entities):
+    response = response_generator.provide_quality_ensuring()
+    print(response)
+    new_state = "end"
+    return new_state, entities
+
+
+def enrichment_query_answer(entities):
+    response = response_generator.provide_enrichment_query()
+    print(response)
+    new_state = "end"
+    return new_state, entities
+
+
 # TODO: process the accessing webpages
 def process_access_websites(entities):
     new_state = "end"

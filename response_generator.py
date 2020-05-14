@@ -338,6 +338,42 @@ def query_student():
     return response
 
 
+# provide quality ensuring
+def provide_quality_ensuring():
+    response = "The CSE Department strives to ensure the quality of our program, in particular:\n"
+    response += "The design and delivery of courses, programs and complementary out-of-class educational experiences;\n"
+    response += "The evaluation and progression of students; and"
+    response += "Academic advising and mentoring.\n"
+    response += "To ensure that the quality and academic standards of our educational provision are being" \
+                " maintained and improved\n"
+    response += "To ensure that the quality and academic standards of our educational provision are being maintained " \
+                "and improved, "
+    response += "we have set up various committees including UG Committee, PG Committee, UG Advising Team, and " \
+                "Student-Staff Liason Committee."
+    return response
+
+
+# provide enrichment
+def provide_enrichment_query():
+    response = "The students are expected to have the following outcomes after joining the CSE Department:\n"
+    response += "An ability to apply knowledge of computing and mathematics appropriate to the discipline.\n"
+    response += "An ability to apply knowledge of a computing specialisation, and domain knowledge appropriate " \
+                "for the computing specialisation to the abstraction and conceptualisation of computing models.\n"
+    response += "An ability to analyze a problem, and identify and define the computing requirements appropriate " \
+                "to its solution.\n"
+    response += "An ability to design, implement and evaluate a computer-based system, process, component, or program" \
+                " to meet desired needs.\n"
+    response += "An ability to function effectively in teams to accomplish a common goal.\n"
+    response += "An understanding of professional, ethical, legal, security and social issues and responsibilities.\n"
+    response += "An ability to communicate effectively with a range of audiences.\n"
+    response += "An ability to analyze the local and global impact of computing on individuals, organizations, " \
+                "and society.\n"
+    response += "An ability to analyze the local and global impact of computing on individuals, organizations, " \
+                "and society.\n"
+    response += "An ability to use current techniques, skills, and tools necessary for computing practices."
+    return response
+
+
 # provide answers when the chat-bot is not able to answer the question
 def sorry():
     response = "Sorry I can't help you. Please try a different one."

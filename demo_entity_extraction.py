@@ -25,8 +25,8 @@ def define_states():
     fsm_entities.add_state("people_query", finite_state_machine_helpers.process_people_query_questions)
     fsm_entities.add_state("contact_query", finite_state_machine_helpers.process_contact_query_questions)
     fsm_entities.add_state("info_query", finite_state_machine_helpers.process_info_query)
-    fsm_entities.add_state("enrichment_query", None, end_state=1)
-    fsm_entities.add_state("quality_query", None, end_state=1)
+    fsm_entities.add_state("enrichment_query", finite_state_machine_helpers.enrichment_query_answer)
+    fsm_entities.add_state("quality_query", finite_state_machine_helpers.ensure_quality_generation)
     fsm_entities.add_state("access_query", None, end_state=1)
     fsm_entities.add_state("general_query", finite_state_machine_helpers.process_general)
 
