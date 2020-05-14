@@ -47,6 +47,9 @@ def classify_intent(entities):
     if contains("get_general", entities["intent"]):
         new_state = "general_query"
         return new_state, entities
+    if contains("get_prerequisite", entities["intent"]):
+        new_state = "prerequisite_query"
+        return new_state, entities
     new_state = "error"
     return new_state, entities
 

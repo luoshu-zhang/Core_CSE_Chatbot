@@ -316,6 +316,7 @@ def query_job_student():
 # ask questions about jobs
 def query_job():
     response = provide_faculty_recruitment()
+    response += "\n"
     response += provide_staff()
     return response
 
