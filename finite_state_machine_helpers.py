@@ -55,6 +55,12 @@ def classify_intent(entities):
 
 
 def divide_basic_questions(entities):
+    if "info_target" in entities:
+        if contains("rank", entities["info_target"]):
+            response = response_generator.provide_ranking_information()
+            print(response)
+            new_state = "end"
+            return new_state, entities
     # Enrichment opportunities
     if "enrich_target" in entities:
         response = ""

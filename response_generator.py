@@ -394,6 +394,14 @@ def provide_enrichment_query():
     return response
 
 
+# provide ranks
+def provide_ranking_information():
+    response = "The department was ranked 26th among all computer science and engineering departments worldwide " \
+               "according to the QS World University Rankings 2019, and 28th according to the Times Higher Education " \
+               "World University Rankings 2019."
+    return response
+
+
 # provide answers when the chat-bot is not able to answer the question
 def sorry():
     response = "Sorry I can't help you. Please try a different one."
