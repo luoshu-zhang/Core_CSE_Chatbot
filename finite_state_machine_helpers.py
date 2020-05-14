@@ -52,7 +52,6 @@ def classify_intent(entities):
 
 
 def divide_basic_questions(entities):
-    # TODO: implement the "inbound"/"outbound" differentiation for exchange
     # Enrichment opportunities
     if "enrich_target" in entities:
         response = ""
@@ -91,6 +90,25 @@ def divide_basic_questions(entities):
         return new_state, entities
     # Course information
     if "course" in entities and "honor_course" not in entities:
+        if "info_target" in entities:
+            if contains("prerequisite", entities["info_target"]):
+                response = ""
+                if "course" not in entities:
+                    total_course = entities["honor_course"]
+                elif "honor_course" not in entities:
+                    total_course = entities["course"]
+                else:
+                    total_course = entities["course"] + entities["honor_course"]
+                attributes, course_info = helper.load_course_information()
+                for i in range(len(total_course)):
+                    if i != 0:
+                        response += "\n"
+                    course_code = total_course[i]["value"]
+                    prerequisite = course_info[course_code][4]
+                    response += response_generator.provide_course_prerequisite(course_code, prerequisite)
+                print(response)
+                new_state = "end"
+                return new_state, entities
         course_attributes, course_info = helper.load_course_information()
         response = ""
         for i in range(len(entities["course"])):
