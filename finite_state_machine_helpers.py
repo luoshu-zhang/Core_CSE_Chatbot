@@ -201,13 +201,9 @@ def divide_basic_questions(entities):
         new_state = "end"
         return new_state, entities
     # Basic information about the department
-    if "basic_target" not in entities and "program" not in entities and "course" not in entities:
-        if "department_name" in entities:
-            response = response_generator.provide_basic_dept_info()
-            print(response)
-            new_state = "end"
-            return new_state, entities
-    new_state = "error"
+    response = response_generator.provide_basic_dept_info()
+    print(response)
+    new_state = "end"
     return new_state, entities
 
 
@@ -634,11 +630,8 @@ def process_contact_query_questions(entities):
             print(response)
             new_state = "end"
             return new_state, entities
-    if "department_name" in entities:
-        response = response_generator.provide_dept_contact_info()
-        print(response)
-        new_state = "end"
-        return new_state, entities
+    response = response_generator.provide_dept_contact_info()
+    print(response)
     new_state = "end"
     return new_state, entities
 
