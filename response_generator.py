@@ -327,7 +327,14 @@ def query_student():
     response += "Here are some possible choices:\n"
     response += "<>BEng in Computer Science (COMP)\n"
     response += "<>BEng in Computer Engineering (CPEG)\n"
-    response += "<>BEng in "
+    response += "<>BSc in Data Science and Technology (DSCT)\n"
+    response += "<>BSc in Risk Management and Business Intelligence (RMBI)\n"
+    response += "<>Master of Science (MSc) Program in Big Data Technology\n"
+    response += "<>Master of Science (MSc) Program in Information Technology\n"
+    response += "<>Minor Program in Information Technology\n"
+    response += "<>Minor Program in Big Data Technology\n"
+    response += "<>Master of Philosophy in Computer Science and Engineering\n"
+    response += "<>Doctor of Philosophy in Computer Science and Engineering\n"
     return response
 
 
