@@ -191,4 +191,3 @@ def change_entity_list(entity_list):
         for i in range(len(value)):
             new_entities[value[0]["name"]].append(value[i])
     return new_entities
-

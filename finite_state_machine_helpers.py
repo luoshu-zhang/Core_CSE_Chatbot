@@ -249,13 +249,18 @@ def process_admission_general(entities):
     response = response_generator.query_job_student()
     print(response)
     job_or_student = input("")
-    entity_list = get_entities(job_or_student)["entities"]
+    entity_list = helper.change_entity_list(get_entities(job_or_student))
     if "info_target" in entity_list:
         if contains("job", entity_list["info_target"]) or contains("title", entity_list["info_target"]):
             print(response_generator.query_job())
+            new_state = "end"
+            return new_state, entities
         # TODO: set up a navigation here
         else:
             print(response_generator.query_student())
+        return "end", entities
+    print(response_generator.sorry())
+    return "end", entities
 
 
 def process_people_query_questions(entities):
@@ -312,9 +317,6 @@ def process_people_query_questions(entities):
             new_state = "end"
             return new_state, entities
         if contains("coordinator", entities["info_target"]):
-            # TODO: check with the users
-            if "status" in entities:
-                pass
             if "program" in entities:
                 response = ""
                 for i in range(len(entities["program"])):
