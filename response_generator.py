@@ -267,6 +267,15 @@ def provide_course_prerequisite(course_code, prerequisite):
     return response
 
 
+# provide information of course exclusion
+def provide_course_exclusion(course_code, exclusion):
+    if "\\N" not in exclusion:
+        response = "The course of " + course_code + " has an exclusion of " + exclusion + "."
+        return response
+    response = "There is no exclusion for " + course_code + ". Feel free to enroll in this course."
+    return response
+
+
 # provide inbound exchange information
 def provide_inbound_exchange():
     response = "Exchange students can apply by following the steps below.\n"

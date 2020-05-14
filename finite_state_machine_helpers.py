@@ -112,6 +112,24 @@ def divide_basic_questions(entities):
                 print(response)
                 new_state = "end"
                 return new_state, entities
+            if contains("exclusion", entities["info_target"]):
+                response = ""
+                if "course" not in entities:
+                    total_course = entities["honor_course"]
+                elif "honor_course" not in entities:
+                    total_course = entities["course"]
+                else:
+                    total_course = entities["course"] + entities["honor_course"]
+                attributes, course_info = helper.load_course_information()
+                for i in range(len(total_course)):
+                    if i != 0:
+                        response += "\n"
+                    course_code = total_course[i]["value"]
+                    exclusion = course_info[course_code][3]
+                    response += response_generator.provide_course_exclusion(course_code, exclusion)
+                print(response)
+                new_state = "end"
+                return new_state, entities
         course_attributes, course_info = helper.load_course_information()
         response = ""
         for i in range(len(entities["course"])):
