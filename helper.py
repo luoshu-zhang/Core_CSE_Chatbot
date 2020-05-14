@@ -177,3 +177,18 @@ def load_enrichment_general_info():
 
 def check_job(info_target):
     return contains("job", info_target) or contains("duty", info_target) or contains("title", info_target)
+
+
+def change_entity_list(entity_list):
+    intent = entity_list["intents"]
+    new_intent = []
+    for i in range(len(intent)):
+        new_intent.append({})
+        new_intent[i]["value"] = intent[i]["name"]
+    new_entities = {"intent": new_intent}
+    for key, value in entity_list["entities"].items():
+        new_entities[value[0]["name"]] = []
+        for i in range(len(value)):
+            new_entities[value[0]["name"]].append(value[i])
+    return new_entities
+

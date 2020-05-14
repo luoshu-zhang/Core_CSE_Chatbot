@@ -319,6 +319,7 @@ if __name__ == "__main__":
     print(response_generator.greeting())
     while True:
         user_response = input("")
-        entity_list = get_entities(user_response)["entities"]
+        entities = get_entities(user_response)
+        entity_list = helper.change_entity_list(entities)
         fsm = define_states()
         fsm.run(entity_list)
